@@ -5,7 +5,7 @@
 <section class="content">
   <section class="invoice">
 
-    <form #form="ngForm" novalidate>
+    <form [formGroup]="orderForm" novalidate>
       <div class="row">
         <div class="col-xs-12">
           <h2 class="page-header">
@@ -14,27 +14,53 @@
         </div>
       </div>
 
-      <div class="row invoice-info">
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="lead">Seus Dados: </p>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Nome">
+            <input formControlName="name" class="form-control" placeholder="Nome" 
+              autocomplete="off" />
+          </mt-input-container>
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <mt-input-container errorMessage="E-mail inválido" label="E-mail">
+            <input formControlName="email" class="form-control" placeholder="E-mail"
+              autocomplete="off" />
+          </mt-input-container>
+        </div>
+
+        <div class="col-sm-3 col-xs-12">
+          <mt-input-container errorMessage="E-mail inválido" label="Endereço">
+            <input formControlName="emailConfirmation" class="form-control" placeholder="Confirmação Email" 
+              autocomplete="off" />
+          </mt-input-container>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="col-xs-12">
           <p class="lead">Endereço de Entrega:</p>
         </div>
         <div class="col-sm-6 col-xs-12">
           <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Endereço">
-            <input name="address" class="form-control" placeholder="Endereço" ngModel required minlength="5"
+            <input formControlName="address" class="form-control" placeholder="Endereço" 
               autocomplete="off" />
           </mt-input-container>
         </div>
         <div class="col-sm-3 col-xs-6">
           <mt-input-container errorMessage="Obrigatório e somente números" label="Número">
-            <input type="text" class="form-control" pattern="^[0-9]*$" name="number" #iptNumero="ngModel" required
-              ngModel placeholder="Número" />
+            <input type="text" class="form-control" formControlName="number"
+               placeholder="Número" />
           </mt-input-container>
 
         </div>
         <div class="col-sm-3 col-xs-6">
 
           <mt-input-container>
-            <input type="text" class="form-control" name="optionalAddress" ngModel placeholder="Complemento">
+            <input type="text" class="form-control" formControlName="optionalAddress" placeholder="Complemento">
 
           </mt-input-container>
         </div>
@@ -59,7 +85,7 @@
           <p class="lead">Formas de Pagamento:</p>
 
           <div class="form-group">
-            <mt-radio required [options]="paymentOptions" name="paymentOption" ngModel></mt-radio>
+            <mt-radio required [options]="paymentOptions" formControlName="paymentOption"></mt-radio>
 
           </div>
 
@@ -77,7 +103,7 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <button (click)="checkOrder(form.value)" [disabled]="!form.valid || cartItems().length === 0" 
+        <button (click)="checkOrder(orderForm.value)" [disabled]="!orderForm.valid || cartItems().length === 0" 
             class="btn btn-success pull-right">
           <i class="fa fa-credit-card"></i> Concluir
           Pedido
