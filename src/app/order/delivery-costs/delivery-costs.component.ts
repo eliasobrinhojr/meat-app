@@ -6,18 +6,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DeliveryCostsComponent implements OnInit {
 
-
-  @Input() delivery: number;
-  @Input() itemsValue: number;
-
+  @Input() delivery: number
+  @Input() itemsValue: number
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  total(): number{
-    return this.delivery + this.itemsValue;
+  total(): number {
+    return this.delivery + this.itemsValue
   }
 
 }

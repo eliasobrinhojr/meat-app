@@ -3,7 +3,7 @@
     {
       "id": "bread-bakery",
       "name": "Bread & Bakery",
-      "category": "Bakery",
+      "category": "Padaria",
       "deliveryEstimate": "25m",
       "rating": 4.9,
       "imagePath": "assets/img/restaurants/breadbakery.png",
@@ -23,7 +23,7 @@
     {
       "id": "coffee-corner",
       "name": "Coffee Corner",
-      "category": "Coffee Shop",
+      "category": "Cafeteria",
       "deliveryEstimate": "30-40m",
       "rating": 4.8,
       "imagePath": "assets/img/restaurants/coffeecorner.png",
@@ -43,7 +43,7 @@
     {
       "id": "ice-cream",
       "name": "Ice Cream",
-      "category": "Ice Creams",
+      "category": "Sorvetes",
       "deliveryEstimate": "40-65m",
       "rating": 4.5,
       "imagePath": "assets/img/restaurants/icy.png",
@@ -372,63 +372,20 @@
   ],
   "orders": [
     {
-      "address": "teste teste",
-      "number": "22",
+      "name": "teste",
+      "email": "teste@teste.com",
+      "emailConfirmation": "teste@teste.com",
+      "address": "rua 222",
+      "number": "4444",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "paymentOption": "REF",
       "orderItems": [
         {
-          "quantity": 1,
-          "menuId": "capp"
-        },
-        {
-          "quantity": 2,
-          "menuId": "espreso"
-        },
-        {
-          "quantity": 2,
-          "menuId": "starb"
+          "quantity": 4,
+          "menuId": "burger"
         }
       ],
       "id": 1
-    },
-    {
-      "address": "asdasdasdas",
-      "number": "22",
-      "optionalAddress": "wewe",
-      "paymentOption": "DEB",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "capp"
-        },
-        {
-          "quantity": 1,
-          "menuId": "espreso"
-        },
-        {
-          "quantity": 2,
-          "menuId": "starb"
-        }
-      ],
-      "id": 2
-    },
-    {
-      "address": "teste tete",
-      "number": "22",
-      "optionalAddress": "",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 3,
-          "menuId": "cup-cake"
-        },
-        {
-          "quantity": 2,
-          "menuId": "donut"
-        }
-      ],
-      "id": 3
     }
   ]
 }
